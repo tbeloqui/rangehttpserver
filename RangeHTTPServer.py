@@ -137,7 +137,7 @@ class RangeHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
             if sl > 0:
                 start_range = int(s)
                 if el > 0:
-                    end_range = int(e) + 1
+                    end_range = min(int(e) + 1, size)
             elif el > 0:
                 ei = int(e)
                 if ei < size:
